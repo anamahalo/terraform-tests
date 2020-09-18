@@ -10,3 +10,14 @@ output "random" {
 }
 
 # That's it! That's the joke.
+
+terraform {
+  required_version = "~> 0.12.0"
+  backend "remote" {
+    organization = "rcarchivist"
+
+  workspaces {
+    name = "terraform-tests"
+  }
+ }
+}
